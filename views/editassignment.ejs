@@ -1,0 +1,23 @@
+<% include header %>
+   <form method="post" action="<%= action %>">
+   
+		<table id="login">
+		    <tr>
+		        <td><input type="hidden" id="FName" name="FName" value ="<%= FName %>"/></td>
+		        <td><input type="hidden" id="LName" name="LName" value ="<%= LName %>"/></td>
+		    </tr>
+		    <tr>
+		        <td><input type="hidden" id="Password" name="Password" value ="<%= Password %>"/></td>
+		    </tr>
+		</table>
+ 	   <input type="hidden" id="AssignmentID" name="AssignmentID" value ="<%= AssignmentID %>"/>
+   	
+		 <textarea type = "text" name ="SubmissionText" id = "SubmissionText"><%= SubmissionText %></textarea>
+			
+       
+       
+       <input type="submit">
+   </form>
+   
+
+<% include footer %>

@@ -1,0 +1,15 @@
+<% include header %>
+
+	Email: <%= rs[0].Email %>
+	<br>
+	<b>Posts</b>
+	<br>
+    <table id="posts">
+	<% for (var i=0; rs.length > i; i++) { %>
+         
+        <%= rs[i].Post %> 
+        <br>
+        
+    <% } %>    
+    </table>
+<% include footer %>

@@ -1,0 +1,28 @@
+<% include header %>
+   
+	<table id="grades">
+	    <tr>
+	    	<td width = "200">Assignment Name:</td>
+	        <td width = "100">Grade: </td>
+	    </tr>
+	    <% for (var i = 0; i < rs.length; i++) { %>
+	    	<% if (i % 2 == 0) { %>
+	    		<tr style = "background-color:#F0F0F0">
+	    	<% } else { %>
+	    		<tr style = "background-color:#E0E0E0">
+	    	<% } %>
+		    	<td><%= rs[i].AssignmentName %></td>
+		    	
+		    	<% if (rs[i].Grade === null) { %>
+		        	<td> Not Graded </td>
+	        	<% } else { %>
+	        		<td> <%= rs[i].Grade %> </td>
+	        	<% } %>
+		    </tr>
+	    <% } %>
+	</table>
+       
+   </form>
+   
+
+<% include footer %>

@@ -1,0 +1,45 @@
+<% include header %>
+   <form method="post" action="<%= action %>">
+   
+		<table id="login">
+		    <tr><td>Instructor First Name:</td>
+		        <!-- name attribute must be provided for non ajax forms -->
+		        <td><input type="text" id="FName" name="FName" /></td>
+		        <td>Instructor Last Name:</td>
+		        <!-- name attribute must be provided for non ajax forms -->
+		        <td><input type="text" id="LName" name="LName" /></td>
+		    </tr>
+		    <tr><td>Instructor Password:</td>
+		        <td><input type="password" id="Password" name="Password" /></td>
+		    </tr>
+		</table>
+    
+    	<br>
+    	
+    
+    	<table id="slogin">
+		    <tr><td>Student First Name:</td>
+		        <td><input type="text" id="SFName" name="SFName" /></td>
+		        <td>Student Last Name:</td>
+		        <td><input type="text" id="SLName" name="SLName" /></td>
+		    </tr>
+		    
+		</table>   
+		
+		<br>
+    	<select id="AssignmentID" name="AssignmentID">
+		    <% for (var i=0; rs.length > i; i++) { %>
+		     <option value="<%= rs[i].AssignmentID %>">
+		         <%= rs[i].AssignmentName %>
+		     </option>
+		    <% } %>
+		</select>
+		
+		New Grade:
+		<input type = "text" id = "Grade" name = "Grade"/>    
+       
+       <input type="submit">
+   </form>
+   
+
+<% include footer %>

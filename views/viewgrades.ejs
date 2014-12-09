@@ -1,0 +1,41 @@
+<% include header %>
+   <form method="post" action="<%= action %>">
+   		<% if (rs.length > 0) { %>
+		<table id="grades">
+		    <tr>
+		    	<td>Student Name</td>
+		    	<td>Assignment Name:</td>
+		        <td>Grade: </td>
+		    </tr>
+		    <% for (var i = 0; i < rs.length; i++) { %>
+		    	<% if (i % 2 == 0) { %>
+		    		<tr style = "background-color:#F0F0F0">
+		    	<% } else { %>
+		    		<tr style = "background-color:#E0E0E0">
+		    	<% } %>
+		    		<td><%= rs[i].FName %></td>
+			    	<td><%= rs[i].AssignmentName %></td>
+			    	<td>
+			    	<input type = "text" id = "Grade_<%= rs[i].StudentID %>_<%= rs[i].AssignmentID %>"
+			    	name = "Grade" 
+		value = " <% if (rs[i].Grade != 'undefined') { %><%= rs[i].Grade %><% } else { %>Not Graded<% } %> "/>
+		        	<%= rs[i].Grade %></td>
+		        	<td>
+		        	<input type="submit" id="<%= rs[i].StudentID %>_<%= rs[i].AssignmentID %>" name ="<%= rs[i].StudentID %>_<%= rs[i].AssignmentID %>" value = "Submit">
+			   		</td>
+			     </tr>
+		    <% } %>
+		</table>
+			
+              
+       <% } else { %>
+       		<h3>No assignments are availible to grade.</h3>
+       <% } %>
+   </form>
+   
+
+<% include footer %>
+
+<% var ButtonID = 0; %>
+<% function test() { ButtonID = 5; %>
+<% } %>

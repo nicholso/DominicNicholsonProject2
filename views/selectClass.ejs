@@ -1,0 +1,20 @@
+<% include header %>
+
+
+   <% if(rs.length > 0) { %>
+   <form method="post" action="<%= action %>">
+       <label for="CourseID">Users</label>
+       <select id="CourseID" name="CourseID">
+            <% for (var i=0; rs.length > i; i++) { %>
+             <option value="<%= rs[i].CourseID %>">
+                 <%= rs[i].CourseName %>
+             </option>
+            <% } %>
+       </select>
+       <input type="submit">
+   </form>
+    <% } else { %>
+         No Classes exists yet.
+    <% } %>
+
+<% include footer %>

@@ -1,0 +1,31 @@
+<% include header %>
+   <form method="post" action="<%= action %>">
+   
+   		<% if(rs.length > 0) { %>
+	       <label for="CourseID">Choose a course: </label>
+	       <select id="CourseID" name="CourseID">
+	            <% for (var i=0; rs.length > i; i++) { %>
+	             <option value="<%= rs[i].CourseID %>">
+	                 <%= rs[i].CourseName %>
+	             </option>
+	            <% } %>
+	       </select>
+	    <% } else { %>
+	         No Classes exists yet.
+	    <% } %>
+		<br>
+		Assignment Name: 
+		<input type="text" id="AssignmentName" name="AssignmentName" />
+		
+		<br>
+	       
+		Assignment Description:<br>
+
+		<textarea type = "text" name ="AssignmentDescription" id = "AssignmentDescription" > </textarea>
+
+       <br>
+       <input type="submit">
+   </form>
+   
+
+<% include footer %>

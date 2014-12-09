@@ -1,0 +1,21 @@
+<% include header %>
+
+
+   <% if(rs.length > 0) { %>
+   <form method="post" action="/user/save">
+   		Username: 
+       <input type = "text" name ="Username" id = "Username" value = "<% Username %> >Users</label>
+       <select id="AccountID" name="AccountID">
+            <% for (var i=0; rs.length > i; i++) { %>
+             <option value="<%= rs[i].AccountID %>">
+                 <%= rs[i].Email %>
+             </option>
+            <% } %>
+       </select>
+       <input type="submit">
+   </form>
+    <% } else { %>
+         No users are entered into the database.
+    <% } %>
+
+<% include footer %>

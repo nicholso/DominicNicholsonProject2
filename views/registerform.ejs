@@ -1,0 +1,29 @@
+<% include header %>
+
+<form method="POST" action="<%= action %>">
+	Are you a student or instructor? 
+	<select id="UserType" name="UserType">
+         <option value="1">
+             Student
+         </option>
+         <option value=2">
+             Instructor
+         </option>
+   </select>
+   <br>
+    <table id="login">
+        <tr><td>First Name:</td>
+            <!-- name attribute must be provided for non ajax forms -->
+            <td><input type="text" id="FName" name="FName" /></td>
+            <td>Last Name:</td>
+            <!-- name attribute must be provided for non ajax forms -->
+            <td><input type="text" id="LName" name="LName" /></td>
+        </tr>
+        <tr><td>Password:</td>
+            <td><input type="password" id="Password" name="Password" /></td>
+        </tr>
+    </table>
+    <input type="submit">
+</form>
+
+<% include footer %>

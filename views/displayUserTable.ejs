@@ -1,0 +1,30 @@
+<% include header %>
+
+
+   <% if(rs.length > 0) { %>
+    <table>
+        <tr>
+        	<th width = "200">First Name</th>
+        	<th width = "200">Last Name</th>
+        </tr>
+	        <% for (var i=0; rs.length > i; i++) { %>
+	            <% if (i % 2 == 0) { %>
+		    		<tr style = "background-color:#F0F0F0">
+		    	<% } else { %>
+		    		<tr style = "background-color:#E0E0E0">
+		    	<% } %>
+	             <td>
+	             	<%= rs[i].FName %>
+	             </td>
+	              <td>
+	             	<%= rs[i].LName %>
+	             </td>
+	             </tr>
+            <% } %>
+        
+    </table>
+    <% } else { %>
+         <h3>No users exist.</h3>
+    <% } %>
+
+<% include footer %>

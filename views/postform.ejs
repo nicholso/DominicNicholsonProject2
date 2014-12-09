@@ -1,0 +1,16 @@
+<% include header %>
+
+<form method="POST" action="<%= action %>">
+    <table id="postsdata">
+        <tr><td>AccountID:</td>
+            <!-- name attribute must be provided for non ajax forms -->
+            <td><input type="text" id="accountid" name="accountid" /></td>
+        </tr>
+        <tr><td>Post:</td>
+            <td><textarea type="text" id="post" name="post" ></textarea></td>
+        </tr>
+    </table>
+    <input type="submit">
+</form>
+
+<% include footer %>
